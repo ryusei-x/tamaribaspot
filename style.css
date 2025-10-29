@@ -1,0 +1,16 @@
+header{
+    text-align: center;
+}
+header img{
+    width:10%;
+    position:relative;
+     top: -100px;
+      right:20%;
+    
+}
+main nav ul{
+
+    justify-content: space-around;
+    list-style-type: none;
+}
+    
