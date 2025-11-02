@@ -212,7 +212,11 @@ button#postButton:hover {
     background-color: #c4e3f3;
 }
 
-order-radius: 8px;
+/* 返信セクションのスタイル */
+.replies-section {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 8px;
     background-color: #f7f7f7;
 }
 
@@ -223,46 +227,21 @@ order-radius: 8px;
     font-style: italic;
 }
 
-/* ... (中略) ... */
-
-/* 返信セクションのスタイル */
-.replies-section {
-    margin-top: 20px;
-    /* ★修正点1: 返信カードを際立たせるため、親の背景色を少し変えるか、パディングを調整 */
-    padding: 15px;
-    border-radius: 8px;
-    background-color: #f7f7f7; /* 親セクションの背景色 */
-}
-
-.replies-section small {
-    display: block;
-    padding: 5px 0;
-    color: #888;
-    font-style: italic;
-}
-
-/* 返信カードのスペース調整 */
+/* 返信カードのスペース調整 (明確に分離) */
 .reply-card {
-    /* ------------------------------------------------------------------ */
-    /* ★修正点2: 返信カード自体を独立した要素としてスタイリング★ */
-    /* ------------------------------------------------------------------ */
     background-color: #ffffff; /* カードの背景を白にし、親の #f7f7f7 と分離 */
     border-radius: 6px;
     padding: 10px; /* カード内部のパディング */
     margin-bottom: 15px; /* 返信間のスペース（これがいちばん重要） */
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* 軽い影で浮き上がらせる */
     border: 1px solid #eee; /* 軽い境界線 */
-    /* 以前の border-bottom: 1px dashed #e0e0e0; は不要なため削除 */
 }
 
 .reply-card:last-child {
-    /* 最後の返信カードの下部にスペースは維持しつつ、親のpaddingと調整 */
     margin-bottom: 0; 
-    border-bottom: none;
 }
 
 .reply-content-box {
-    /* 内部要素の不要なパディングを削除 */
     padding-left: 0;
 }
 
@@ -272,8 +251,12 @@ order-radius: 8px;
     color: #444;
 }
 
-/* ... (後略) ... */
-
+.reply-content-box small {
+    display: block;
+    text-align: right;
+    color: #999;
+    font-size: 0.8em;
+}
 
 
 /* 共有ボタンのスタイル */
@@ -307,6 +290,83 @@ order-radius: 8px;
     color: white;
 }
 
+/* ★★★ 追記する部分：モーダルスタイリング ★★★ */
+.modal {
+    display: none; /* 初期状態では非表示 */
+    position: fixed; 
+    z-index: 100; /* 最前面に表示 */
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4); /* 背景を黒く透過 */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; /* 画面中央に配置 */
+    padding: 30px;
+    border: 1px solid #888;
+    width: 90%;
+    max-width: 500px; /* 最大幅を設定 */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 20px;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#replyAuthor, #replyContent {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+#replyContent {
+    min-height: 80px;
+}
+
+#submitReplyButton {
+    background-color: #1976d2; /* 返信ボタンの色に合わせる */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+}
+
+#submitReplyButton:hover {
+    background-color: #1565c0;
+}
+
+.reply-note {
+    font-size: 0.8em;
+    color: #777;
+    margin-top: 10px;
+    text-align: right;
+}
+/* ★★★ 追記終了 ★★★ */
+
+
 /* モバイル対応 */
 @media (max-width: 768px) {
     header h1 {
@@ -337,8 +397,8 @@ order-radius: 8px;
     }
 }
 
-
     
+
 
 
 
