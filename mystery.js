@@ -112,13 +112,10 @@ async function postReply(postId) {
     
     let replyAuthor = authorInput.value.trim();
 
-    // ニックネームが空の場合、promptで入力を求める
+    // ★【修正箇所】ニックネームが空の場合、「匿名返信」を使用★
     if (!replyAuthor) {
-        replyAuthor = prompt("返信をするためのニックネームを入力してください:");
-        if (!replyAuthor || replyAuthor.trim() === '') {
-            alert("ニックネームが入力されなかったため、返信できません。");
-            return;
-        }
+        replyAuthor = '匿名返信'; // ニックネームが空欄の場合、「匿名返信」を使用
+    } else {
         replyAuthor = replyAuthor.trim();
     }
     
@@ -209,7 +206,8 @@ onSnapshot(postsQuery, (snapshot) => {
         const likedByArray = Array.isArray(post.likedBy) ? post.likedBy : [];
         const isLiked = likedByArray.includes(authorForLikeCheck);
         const likeButtonClass = isLiked ? 'liked' : '';
-        const likeButtonText = isLiked ? '★いいね解除' : 'いいね！';
+        // ★修正: ハートマークはCSSで処理するため、テキストはシンプルにします。
+        const likeButtonText = isLiked ? '解除' : 'いいね！';
 
         // onclickに渡す文字列に含まれる可能性のあるシングルクォートをエスケープ処理
         // ここに渡すのは入力欄の値なので currentAuthor を使用
@@ -226,7 +224,7 @@ onSnapshot(postsQuery, (snapshot) => {
                     class="like-button ${likeButtonClass}" 
                     onclick="window.toggleLike('${postId}', '${escapedAuthor}')"
                 >
-                    ${likeButtonText} (${post.likesCount || 0})
+                    <span class="heart-icon"></span> ${likeButtonText} (${post.likesCount || 0})
                 </button>
                 <button 
                     class="reply-button" 
