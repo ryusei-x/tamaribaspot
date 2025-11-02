@@ -1,9 +1,10 @@
 /* 基本的なリセットとフォント設定 */
 body {
-    font-family: sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* スタイリッシュなフォントに変更 */
     margin: 0;
     padding: 0;
-    background-color: #f4f4f9;
+    background-color: #eef1f6; /* 背景を明るいグレーに変更 */
+    color: #333;
 }
 
 header {
@@ -13,9 +14,9 @@ header {
     color: white;
     /* paddingは画像の上にテキストを重ねるために、内側のコンテンツコンテナに移動します */
     padding: 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 影を強調 */
     /* 確実に画像を表示するために最小の高さを設定 */
-    min-height: 250px; 
+    min-height: 280px; /* 高さを少し上げる */
     overflow: hidden; /* 画像がはみ出さないように */
     background-color: #3f51b5; /* 画像がない場合の背景色 */
 }
@@ -29,8 +30,8 @@ header {
     margin: 0;
     /* 画像を完全に背景として扱うため、境界線を削除 */
     border-bottom: none; 
-    /* 画像を暗くして文字を読みやすくするためのフィルター */
-    filter: brightness(0.5);
+    /* 画像を暗くして文字を読みやすくするためのフィルターを強調 */
+    filter: brightness(0.4);
     position: absolute;
     top: 0;
     left: 0;
@@ -41,16 +42,17 @@ header {
 .header-content {
     position: relative;
     z-index: 2; /* 画像より上に配置 */
-    padding: 20px 15px; /* 以前のheader paddingをこちらに移動 */
-    max-width: 600px;
+    padding: 30px 15px; /* 以前のheader paddingをこちらに移動 */
+    max-width: 700px; /* 最大幅を広げる */
     margin: 0 auto;
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.7); /* 文字の視認性を高める */
+    text-shadow: 0 0 8px rgba(0, 0, 0, 1); /* 文字の視認性を高める */
 }
 
 header h1 {
     margin: 0;
-    font-size: 2.2em;
+    font-size: 2.5em; /* フォントを大きく */
     padding-bottom: 10px;
+    font-weight: 700;
 }
 /* 以前の header h1 padding-bottom: 10px; は .header-content 内で調整 */
 
@@ -58,22 +60,24 @@ header h1 {
 header p {
     margin: 10px 0;
     padding: 0 20px;
+    font-size: 1.1em;
 }
 
 header nav {
     text-align: left;
-    max-width: 600px;
+    max-width: 700px;
     margin: 10px auto;
     padding: 0 20px;
 }
 
 header nav li {
-    list-style-type: none;
-    margin-left: -20px;
+    list-style-type: '💡 '; /* リストマーカーを装飾 */
+    margin-left: -10px;
+    padding-left: 10px;
 }
 
 main {
-    max-width: 600px;
+    max-width: 700px; /* 最大幅を広げる */
     margin: 20px auto;
     padding: 0 15px;
 }
@@ -81,17 +85,23 @@ main {
 /* 投稿フォームのスタイル */
 input#author, textarea#content {
     width: calc(100% - 20px);
-    padding: 10px;
+    padding: 12px; /* パディングを増やす */
     margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border: 1px solid #ddd; /* 枠線を薄く */
+    border-radius: 8px; /* 角を丸く */
     box-sizing: border-box; /* paddingをwidthに含める */
+    font-size: 1em;
 }
+
+textarea#content {
+    min-height: 100px;
+}
+
 
 button#postButton {
     width: 100%;
     padding: 12px;
-    background-color: #177ee6; /* 暖色系の投稿ボタン */
+    background-color:#177ee6; /* 暖色系の投稿ボタン */
     color: white;
     border: none;
     border-radius: 5px;
@@ -102,96 +112,143 @@ button#postButton {
 }
 
 button#postButton:hover {
-    background-color: #e64a19;
+    background-color: #19a1e6;
 }
+
 
 /* 投稿カードのスタイル */
 .post-card {
     background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 15px;
-    margin-bottom: 15px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e0e0e0;
+    border-radius: 12px; /* 角を大きく丸める */
+    padding: 20px;
+    margin-bottom: 20px; /* 投稿間のスペースを増やす */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* 影を強調 */
+    transition: transform 0.2s;
+}
+
+.post-card:hover {
+    transform: translateY(-3px);
 }
 
 .post-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     font-size: 0.9em;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 8px;
 }
 
 .post-header strong {
-    color: #3f51b5;
-    font-size: 1.1em;
+    color: #303f9f; /* 濃い青 */
+    font-size: 1.2em;
+    font-weight: 600;
 }
 
 .post-date {
-    color: #999;
+    color: #9e9e9e;
+    font-size: 0.85em;
 }
 
 .post-content {
     white-space: pre-wrap; /* 改行を有効にする */
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    line-height: 1.6;
 }
 
 /* アクションボタン（いいね、返信）のスタイル */
 .post-actions {
     display: flex;
-    gap: 10px;
+    gap: 15px;
     border-top: 1px solid #eee;
-    padding-top: 10px;
+    padding-top: 15px;
 }
 
 .like-button, .reply-button {
-    padding: 6px 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 20px; /* 楕円形ボタン */
     cursor: pointer;
-    background-color: #f9f9f9;
-    transition: background-color 0.2s, border-color 0.2s;
-    font-size: 0.9em;
+    background-color: #f0f4f7;
+    transition: background-color 0.2s, box-shadow 0.2s;
+    font-size: 0.95em;
+    font-weight: 500;
+}
+
+.like-button:hover, .reply-button:hover {
+    background-color: #e0e6eb;
+}
+
+/* いいねボタンのハートマークスタイリング */
+.like-button .heart-icon::before {
+    content: '♡'; /* Unicodeの白いハート */
+    color: #999;
+    font-size: 1.2em;
 }
 
 .like-button.liked {
-    background-color: pink; /* いいね済みは薄いオレンジ */
-    border-color: #ff9800;
-    color: #d84315;
+    background-color: #ffebee; /* 薄い赤 */
+    color: #d32f2f; /* 濃い赤 */
     font-weight: bold;
+    box-shadow: 0 0 5px rgba(211, 47, 47, 0.3);
 }
 
-.like-button:hover:not(.liked), .reply-button:hover {
-    background-color: #e0e0e0;
+.like-button.liked .heart-icon::before {
+    content: '❤'; /* Unicodeの黒いハート (CSSで色を変更) */
+    color: #d32f2f; /* 濃い赤 */
+}
+
+.reply-button {
+    background-color: #e3f2fd;
+    color: #1976d2;
+}
+
+.reply-button:hover {
+    background-color: #c4e3f3;
 }
 
 /* 返信セクションのスタイル */
 .replies-section {
-    margin-top: 15px;
-    padding-left: 10px;
-    border-left: 3px solid #ccc;
-    background-color: #fafafa;
-    padding: 10px;
-    border-radius: 5px;
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #f7f7f7;
 }
 
+.replies-section small {
+    display: block;
+    padding: 5px 0;
+    color: #888;
+    font-style: italic;
+}
+
+/* 返信カードのスペース調整 (明確に分離) */
 .reply-card {
-    border-bottom: 1px dashed #eee;
-    padding: 8px 0;
+    background-color: #ffffff; /* カードの背景を白にし、親の #f7f7f7 と分離 */
+    border-radius: 6px;
+    padding: 10px; /* カード内部のパディング */
+    margin-bottom: 15px; /* 返信間のスペース（これがいちばん重要） */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* 軽い影で浮き上がらせる */
+    border: 1px solid #eee; /* 軽い境界線 */
 }
 
 .reply-card:last-child {
-    border-bottom: none;
+    margin-bottom: 0; 
 }
 
 .reply-content-box {
-    padding-left: 5px;
+    padding-left: 0;
 }
 
 .reply-content-box p {
     margin: 0 0 5px 0;
     font-size: 0.95em;
+    color: #444;
 }
 
 .reply-content-box small {
@@ -206,21 +263,26 @@ button#postButton:hover {
 .share-container {
     text-align: center;
     margin-top: 20px;
+    padding: 0 15px;
 }
 
 .share-button {
-    display: inline-block;
-    padding: 8px 15px;
-    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 10px 20px;
+    border-radius: 20px;
     text-decoration: none;
     font-weight: bold;
-    font-size: 0.9em;
+    font-size: 1em;
     margin: 0 5px;
-    transition: opacity 0.2s;
+    transition: opacity 0.2s, transform 0.2s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .share-button:hover {
-    opacity: 0.8;
+    opacity: 0.9;
+    transform: translateY(-1px);
 }
 
 .share-button.line {
@@ -228,16 +290,124 @@ button#postButton:hover {
     color: white;
 }
 
+/* ★★★ 追記する部分：モーダルスタイリング ★★★ */
+.modal {
+    display: none; /* 初期状態では非表示 */
+    position: fixed; 
+    z-index: 100; /* 最前面に表示 */
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4); /* 背景を黒く透過 */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; /* 画面中央に配置 */
+    padding: 30px;
+    border: 1px solid #888;
+    width: 90%;
+    max-width: 500px; /* 最大幅を設定 */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 20px;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#replyAuthor, #replyContent {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+#replyContent {
+    min-height: 80px;
+}
+
+#submitReplyButton {
+    background-color: #1976d2; /* 返信ボタンの色に合わせる */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+}
+
+#submitReplyButton:hover {
+    background-color: #1565c0;
+}
+
+.reply-note {
+    font-size: 0.8em;
+    color: #777;
+    margin-top: 10px;
+    text-align: right;
+}
+/* ★★★ 追記終了 ★★★ */
+
+
 /* モバイル対応 */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     header h1 {
-        font-size: 1.5em;
+        font-size: 2em;
+    }
+
+    .header-content {
+        padding: 20px 10px;
     }
 
     main {
         margin: 10px auto;
         padding: 0 10px;
     }
+    
+    .post-card {
+        padding: 15px;
+    }
 
+    .post-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .like-button, .reply-button {
+        width: 100%;
+        justify-content: center;
+    }
 }
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
 
