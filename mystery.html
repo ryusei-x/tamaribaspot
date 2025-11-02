@@ -37,15 +37,26 @@
         </a>
     </div>
 
-    <main>
-        <p>気に入った人は、拡散よろしく↑↑↑</p>
-        <input id="author" placeholder="ニックネーム(省略可)" value="">
-        <textarea id="content" placeholder="コメントしてください" ></textarea>
-        <button id="postButton">投稿する</button>
+<main>
+    <p>気に入った人は、拡散よろしく↑↑↑</p>
+    <input id="author" placeholder="ニックネーム(メイン投稿用/省略可)" value="">
+    <textarea id="content" placeholder="コメントしてください" ></textarea>
+    <button id="postButton">投稿する</button>
 
-        <div id="posts">
-            </div>
-    </main>
+    <div id="posts">
+        </div>
+</main>
+
+<div id="replyModal" class="modal">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h3>投稿に返信する</h3>
+        <input id="replyAuthor" placeholder="ニックネーム (省略可)" value="">
+        <textarea id="replyContent" placeholder="返信コメントを入力してください" ></textarea>
+        <button id="submitReplyButton">返信を送信</button>
+        <p class="reply-note">※ニックネームを省略した場合、「名無しさん」となります。</p>
+    </div>
+</div>
 
     <script type="module">
         // 必要な関数を CDN からインポート
@@ -108,6 +119,7 @@
     <script type="module" src="mystery.js"></script>
 </body>
 </html>
+
 
 
 
