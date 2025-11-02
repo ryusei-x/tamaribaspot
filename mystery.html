@@ -4,17 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ミステリーオタクのたまり場</title>
-    <!-- Font Awesome (アイコン用) を追加 -->
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="mystery.css">
-    <meta name="google-site-verification" content="Q1IfW4_LTxtExFhWzzAQ1GSMa3br23Tz7SC5pvee_RQ" />
+    
 </head>
 <body>
     <header>
-        <!-- 画像をヘッダーの背景として配置 -->
-        <img src="24737142_s (1).jpg" alt="ミステリー小説のイメージ" id="header-image">
+        <img src="24737142_s.jpg" alt="ミステリー小説のイメージ" id="header-image">
         
-        <!-- ★修正点: 画像の上に重ねるためのコンテナ (.header-content) を追加★ -->
         <div class="header-content">
             <h1>ミステリーオタクのたまり場</h1>
             <p>このサイトはミステリー小説や映画について語り合うサイトです。できることは主に、以下の３つです</p>
@@ -36,7 +33,7 @@
             id="lineShareButton"
             class="share-button line"
         >
-            LINE <span>&#9990;</span>
+            LINE <i class="fab fa-line"></i> 
         </a>
     </div>
 
@@ -47,11 +44,9 @@
         <button id="postButton">投稿する</button>
 
         <div id="posts">
-            <!-- 投稿はここにリアルタイムで表示されます -->
-        </div>
+            </div>
     </main>
 
-    <!-- Firebase SDKのインポート (元のコードから変更なし) -->
     <script type="module">
         // 必要な関数を CDN からインポート
         import { 
@@ -110,11 +105,9 @@
         // ------------------------------------
     </script>
     
-    <!-- 投稿処理のスクリプト -->
     <script type="module" src="mystery.js"></script>
 </body>
 </html>
-
 
 
 
