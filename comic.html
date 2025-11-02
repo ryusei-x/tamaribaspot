@@ -15,11 +15,11 @@
         <img src="comic.jpg" alt="漫画・アニメのイメージ" id="header-image">
         
         <!-- ★修正点: 画像の上に重ねるためのコンテナ (.header-content) を追加★ -->
-        <div class="header-content">
+     <div class="header-content">
             <h1>漫画・アニメオタクのたまり場</h1>
-            <p>このサイトは漫画・アニメについて語り合うサイトです。できることは主に、以下の３つです</p>
+            <p>このサイトは漫画やアニメについて語り合うサイトです。できることは主に、以下の３つです</p>
             <nav>
-                <li>1.漫画・アニメに関する話題を投稿（かわいいキャラクターは？コナンっていまどこまで進んでいるの？など）</li>
+                <li>1.漫画・アニメに関する話題を投稿</li>
                 <li>2.投稿に対して、いいねや返信で参加</li>
                 <li>3.話題への反応を見て考察や語り合って楽しむ</li>
             </nav>
@@ -36,22 +36,30 @@
             id="lineShareButton"
             class="share-button line"
         >
-            LINE <span>&#9990;</span>
+            LINE <i class="fab fa-line"></i> 
         </a>
     </div>
 
     <main>
         <p>気に入った人は、拡散よろしく↑↑↑</p>
-        <input id="author" placeholder="ニックネーム(省略可)" value="">
-        <textarea id="content" placeholder="文の先頭にキーワードを入れて、コメントしてください　例→ドクターX　誰かドクターXの主人公の名前を教えてください。" ></textarea>
+        <input id="author" placeholder="ニックネーム(メイン投稿用/省略可)" value="">
+        <textarea id="content" placeholder="コメントしてください" ></textarea>
         <button id="postButton">投稿する</button>
 
         <div id="posts">
-            <!-- 投稿はここにリアルタイムで表示されます -->
-        </div>
+            </div>
     </main>
 
-    <!-- Firebase SDKのインポート (元のコードから変更なし) -->
+    <div id="replyModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h3>投稿に返信する</h3>
+            <input id="replyAuthor" placeholder="ニックネーム (省略可)" value="">
+            <textarea id="replyContent" placeholder="返信コメントを入力してください" ></textarea>
+            <button id="submitReplyButton">返信を送信</button>
+            <p class="reply-note">※ニックネームを省略した場合、「匿名返信」となります。</p>
+        </div>
+    </div>
     <script type="module">
         // 必要な関数を CDN からインポート
         import { 
@@ -77,13 +85,13 @@
 
         // あなたの Firebase 設定
         const firebaseConfig = {
-            apiKey: "AIzaSyCRZOFpDPwXgBoMMRgLIiDaS1-ruj1g6JA",
-            authDomain: "animemanga-968e7.firebaseapp.com",
-            projectId: "animemanga-968e7",
-            storageBucket: "animemanga-968e7.firebasestorage.app",
-            messagingSenderId: "536703200279",
-            appId: "1:536703200279:web:fa8b2d1e6089c99d034052",
-            measurementId: "G-GYTB6S38H5"
+            apiKey: "AIzaSyBhMD-MZidG7U1kIGloqQHRnfe95roIjvU",
+            authDomain: "mysterysns-734f7.firebaseapp.com",
+            projectId: "mysterysns-734f7",
+            storageBucket: "mysterysns-734f7.firebasestorage.app",
+            messagingSenderId: "4298363521",
+            appId: "1:4298363521:web:7ce62992d54f8e37c8b380",
+            measurementId: "G-5PWGSZKMQX"
         };
 
         // Firebase の初期化
@@ -110,11 +118,13 @@
         // ------------------------------------
     </script>
     
+    
     <!-- 投稿処理のスクリプト -->
     <script type="module" src="comic.js"></script>
 </body>
 
 </html>
+
 
 
 
