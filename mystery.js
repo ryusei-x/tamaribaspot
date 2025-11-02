@@ -20,8 +20,18 @@ const postButton = document.getElementById('postButton');
 const authorInput = document.getElementById('author');
 const contentInput = document.getElementById('content');
 const postsDiv = document.getElementById('posts');
-// ★注意: この変数への要素の代入は、以下の window.onload 内に移動します。
 let lineShareButton; 
+
+// ★★★ 追記した要素の取得 ★★★
+const replyModal = document.getElementById('replyModal');
+const closeButton = replyModal.querySelector('.close-button');
+const replyAuthorInput = document.getElementById('replyAuthor');
+const replyContentInput = document.getElementById('replyContent');
+const submitReplyButton = document.getElementById('submitReplyButton');
+
+let currentPostId = null; // 現在返信しようとしている投稿IDを保持する変数
+// ★★★ 追記終了 ★★★
+
 
 // 2. 投稿ボタンクリック時の処理（書き込み処理）
 postButton.addEventListener('click', async () => {
@@ -63,7 +73,7 @@ async function toggleLike(postId, currentAuthor) {
     
     let authorToUse = currentAuthor;
     
-    // ★【修正箇所】ニックネームが空の場合、「匿名いいね」を使用★
+    // ニックネームが空の場合、「匿名いいね」を使用
     if (!authorToUse || authorToUse.trim() === '') {
         authorToUse = '匿名いいね'; // ニックネームが空欄の場合、固定の匿名ユーザー名を使用
     } else {
@@ -107,37 +117,78 @@ async function toggleLike(postId, currentAuthor) {
 window.toggleLike = toggleLike; // HTMLから呼び出せるようにグローバルに公開
 
 
-// 4. 返信機能の処理 (prompt式)
-async function postReply(postId) {
+// 4. 返信機能の処理 (モーダル式に変更)
+function postReply(postId) {
+    // どの投稿に返信するかを記録
+    currentPostId = postId; 
     
-    let replyAuthor = authorInput.value.trim();
+    // メイン投稿のニックネームを返信用ニックネーム欄に初期値として設定
+    // ユーザーが消すことで匿名返信を選択できるようにする
+    replyAuthorInput.value = authorInput.value.trim(); 
+    
+    // コメントはクリア
+    replyContentInput.value = '';
+    
+    // モーダルを表示
+    replyModal.style.display = "block";
+}
+window.postReply = postReply; // HTMLから呼び出せるようにグローバルに公開
 
-    // ★【修正箇所】ニックネームが空の場合、「匿名返信」を使用★
-    if (!replyAuthor) {
-        replyAuthor = '匿名返信'; // ニックネームが空欄の場合、「匿名返信」を使用
-    } else {
-        replyAuthor = replyAuthor.trim();
+
+// 4-1. モーダルの閉じる処理
+closeButton.onclick = function() {
+    replyModal.style.display = "none";
+}
+
+// モーダル外のクリックで閉じる処理
+window.onclick = function(event) {
+    if (event.target == replyModal) {
+        replyModal.style.display = "none";
+    }
+}
+
+
+// 4-2. 返信送信ボタンクリック時の処理
+submitReplyButton.onclick = async function() {
+    
+    if (!currentPostId) {
+        console.error("返信対象の投稿IDが設定されていません。");
+        replyModal.style.display = "none";
+        return;
     }
     
-    const replyContent = prompt("返信コメントを入力してください:");
-    if (!replyContent || replyContent.trim() === '') {
+    let replyAuthor = replyAuthorInput.value.trim();
+    const replyContent = replyContentInput.value.trim();
+    
+    if (!replyContent) {
+        alert("返信コメントを入力してください。");
         return;
     }
 
+    // ★【修正箇所】ニックネームが空の場合、「匿名返信」を使用★
+    if (!replyAuthor) {
+        replyAuthor = '匿名返信'; 
+    }
+    // ----------------------------------------------------
+
     try {
         // 返信は投稿ドキュメントのサブコレクション 'replies' に追加
-        const repliesCollectionRef = collection(db, "posts", postId, "replies");
+        const repliesCollectionRef = collection(db, "posts", currentPostId, "replies");
         await addDoc(repliesCollectionRef, {
             author: replyAuthor,
             content: replyContent,
             timestamp: serverTimestamp(),
         });
+
+        // 成功したらモーダルを閉じる
+        replyModal.style.display = "none";
+        currentPostId = null; // IDをリセット
+
     } catch (error) {
         console.error("返信投稿エラー:", error);
         alert("返信投稿中にエラーが発生しました。コンソールを確認してください。");
     }
-}
-window.postReply = postReply; // HTMLから呼び出せるようにグローバルに公開
+};
 
 
 // 5. リアルタイムでの投稿表示処理（読み込み処理）
@@ -268,7 +319,9 @@ window.onload = function() {
         });
     }
 };
-// ★修正終わり: 既存のLINE共有ロジックを window.onload 関数で囲みました。
+
+
+
 
 
 
