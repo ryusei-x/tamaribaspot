@@ -97,24 +97,24 @@ textarea#content {
     min-height: 100px;
 }
 
+
 button#postButton {
     width: 100%;
-    padding: 15px;
-    background-color: #d32f2f; /* 赤系のスタイリッシュな色 */
+    padding: 12px;
+    background-color:#177ee6; /* 暖色系の投稿ボタン */
     color: white;
     border: none;
-    border-radius: 8px;
-    font-size: 1.2em;
-    font-weight: bold;
+    border-radius: 5px;
+    font-size: 1.1em;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.1s;
-    margin-bottom: 30px;
+    transition: background-color 0.3s;
+    margin-bottom: 20px;
 }
 
 button#postButton:hover {
-    background-color: #c62828;
-    transform: translateY(-2px);
+    background-color: #19a1e6;
 }
+
 
 /* 投稿カードのスタイル */
 .post-card {
@@ -398,6 +398,7 @@ button#postButton:hover {
 }
 
     
+
 
 
 
