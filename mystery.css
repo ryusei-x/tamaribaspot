@@ -212,6 +212,17 @@ button#postButton:hover {
     background-color: #c4e3f3;
 }
 
+order-radius: 8px;
+    background-color: #f7f7f7;
+}
+
+.replies-section small {
+    display: block;
+    padding: 5px 0;
+    color: #888;
+    font-style: italic;
+}
+
 /* 返信セクションのスタイル */
 .replies-section {
     margin-top: 20px;
@@ -229,32 +240,21 @@ button#postButton:hover {
 
 /* 返信カードのスペース調整 */
 .reply-card {
+    /* ---------------------------------------------------- */
+    /* ★修正点: 返信どうしのスペースを大きく確保しました★ */
+    /* ---------------------------------------------------- */
     border-bottom: 1px dashed #e0e0e0;
     padding: 10px 0;
-    margin-bottom: 10px; /* ★修正点2: 返信どうしのスペース */
+    margin-bottom: 15px; /* ここを15pxに増やしてスペースを確保 */
+    /* ---------------------------------------------------- */
 }
 
 .reply-card:last-child {
     border-bottom: none;
-    margin-bottom: 0;
+    margin-bottom: 0; /* 最後の返信カードの下部マージンを削除 */
 }
 
-.reply-content-box {
-    padding-left: 5px;
-}
 
-.reply-content-box p {
-    margin: 0 0 5px 0;
-    font-size: 0.95em;
-    color: #444;
-}
-
-.reply-content-box small {
-    display: block;
-    text-align: right;
-    color: #999;
-    font-size: 0.8em;
-}
 
 
 /* 共有ボタンのスタイル */
@@ -320,6 +320,7 @@ button#postButton:hover {
 
 
     
+
 
 
 
