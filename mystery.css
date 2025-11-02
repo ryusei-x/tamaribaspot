@@ -223,12 +223,15 @@ order-radius: 8px;
     font-style: italic;
 }
 
+/* ... (中略) ... */
+
 /* 返信セクションのスタイル */
 .replies-section {
     margin-top: 20px;
+    /* ★修正点1: 返信カードを際立たせるため、親の背景色を少し変えるか、パディングを調整 */
     padding: 15px;
     border-radius: 8px;
-    background-color: #f7f7f7;
+    background-color: #f7f7f7; /* 親セクションの背景色 */
 }
 
 .replies-section small {
@@ -240,20 +243,36 @@ order-radius: 8px;
 
 /* 返信カードのスペース調整 */
 .reply-card {
-    /* ---------------------------------------------------- */
-    /* ★修正点: 返信どうしのスペースを大きく確保しました★ */
-    /* ---------------------------------------------------- */
-    border-bottom: 1px dashed #e0e0e0;
-    padding: 10px 0;
-    margin-bottom: 15px; /* ここを15pxに増やしてスペースを確保 */
-    /* ---------------------------------------------------- */
+    /* ------------------------------------------------------------------ */
+    /* ★修正点2: 返信カード自体を独立した要素としてスタイリング★ */
+    /* ------------------------------------------------------------------ */
+    background-color: #ffffff; /* カードの背景を白にし、親の #f7f7f7 と分離 */
+    border-radius: 6px;
+    padding: 10px; /* カード内部のパディング */
+    margin-bottom: 15px; /* 返信間のスペース（これがいちばん重要） */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* 軽い影で浮き上がらせる */
+    border: 1px solid #eee; /* 軽い境界線 */
+    /* 以前の border-bottom: 1px dashed #e0e0e0; は不要なため削除 */
 }
 
 .reply-card:last-child {
+    /* 最後の返信カードの下部にスペースは維持しつつ、親のpaddingと調整 */
+    margin-bottom: 0; 
     border-bottom: none;
-    margin-bottom: 0; /* 最後の返信カードの下部マージンを削除 */
 }
 
+.reply-content-box {
+    /* 内部要素の不要なパディングを削除 */
+    padding-left: 0;
+}
+
+.reply-content-box p {
+    margin: 0 0 5px 0;
+    font-size: 0.95em;
+    color: #444;
+}
+
+/* ... (後略) ... */
 
 
 
@@ -320,6 +339,7 @@ order-radius: 8px;
 
 
     
+
 
 
 
