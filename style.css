@@ -13,4 +13,8 @@ main nav ul{
     justify-content: space-around;
     list-style-type: none;
 }
+aside{
+    backgrond-color:gray;
+}
     
+
