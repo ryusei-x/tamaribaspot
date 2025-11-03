@@ -13,9 +13,13 @@ main nav ul{
     justify-content: space-around;
     list-style-type: none;
 }
-aside { 
-    background-color: gray;
-}
+ aside {
+      background-color: gray; /* 背景を灰色に */
+      color: white;            /* 文字を白に（見やすく） */
+      padding: 20px;           /* 内側の余白を追加 */
+      border-radius: 8px;      /* 角を少し丸く */
+    }
     
+
 
 
