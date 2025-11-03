@@ -17,7 +17,7 @@ main nav ul{
       background-color: gray; /* 背景を灰色に */
       color: white;            /* 文字を白に（見やすく） */
       padding: 20px;           /* 内側の余白を追加 */
-      border-radius: 8px;      /* 角を少し丸く */
+        
     }
        aside a {
       color: #fff;           /* リンクも白文字に */
@@ -30,6 +30,7 @@ main nav ul{
     aside a:hover {
       text-decoration: underline; /* ホバー時だけ下線 */
     }
+
 
 
 
