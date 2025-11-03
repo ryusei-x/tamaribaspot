@@ -4,6 +4,115 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>削除依頼・お問い合わせ </title>
+    <style>
+        /* 1. 全体設定 */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f7f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 2. ヘッダー */
+        header {
+            background-color: #4CAF50; /* グリーン */
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        header p {
+            margin: 0;
+        }
+        header a {
+            color: white;
+            text-decoration: none;
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            font-weight: bold;
+        }
+
+        /* 3. メインコンテンツ */
+        main {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        section {
+            margin-bottom: 30px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+        section:last-child {
+            border-bottom: none;
+        }
+
+        /* 4. 見出し */
+        section h2 {
+            color: #388e3c; /* 濃いグリーン */
+            border-left: 5px solid #4CAF50;
+            padding-left: 10px;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        /* 5. メールアドレスの強調 */
+        .email-address-section strong {
+            display: block;
+            margin-top: 15px;
+            font-size: 1.1em;
+            color: #333;
+        }
+        .email-address-section a {
+            color: #FF5722; /* 目立つオレンジ色 */
+            font-size: 1.3em;
+            text-decoration: none;
+            font-weight: bold;
+            word-break: break-all; /* 長いアドレスでも改行 */
+        }
+        .email-address-section a:hover {
+            text-decoration: underline;
+        }
+
+        /* 6. リスト */
+        ul {
+            list-style: disc;
+            margin-left: 25px;
+            padding: 0;
+        }
+        ul strong {
+            color: #1a73e8; /* 項目名を青で強調 */
+        }
+
+        /* 7. フッター (審査必須) */
+        footer {
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 40px;
+            color: #777;
+            border-top: 1px solid #ddd;
+            background-color: #fff;
+        }
+        footer a {
+            color: #4CAF50;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -42,4 +151,5 @@
 
   
 </body>
+
 </html>
