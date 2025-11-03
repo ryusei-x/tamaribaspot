@@ -13,23 +13,26 @@ main nav ul{
     justify-content: space-around;
     list-style-type: none;
 }
- aside {
-      background-color: gray; /* 背景を灰色に */
-      color: white;            /* 文字を白に（見やすく） */
-      padding: 20px;           /* 内側の余白を追加 */
-        
-    }
-       aside a {
-      color: #fff;           /* リンクも白文字に */
-      text-decoration: none; /* 下線を消す（任意） */
-    　display: flex;          /* ← 横並びにするポイント */
-      gap: 15px;              /* 要素の間のすき間 */
-      justify-content: center;/* 中央寄せ（任意） */
-    }
+aside {
+  background-color: gray;
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
 
-    aside a:hover {
-      text-decoration: underline; /* ホバー時だけ下線 */
-    }
+  display: flex;          /* ← 横並びにするのはここ！ */
+  gap: 15px;              /* 要素の間のすき間 */
+  justify-content: center;/* 中央寄せ（任意） */
+}
+
+aside a {
+  color: #fff;            /* リンクを白文字に */
+  text-decoration: none;  /* 下線を消す（任意） */
+}
+
+aside a:hover {
+  text-decoration: underline; /* ホバーで下線 */
+}
+
 
 
 
