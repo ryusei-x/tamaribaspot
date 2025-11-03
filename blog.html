@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理人日記</title>
+<style>
+/* ======================================= */
+/* 管理者日記（ブログ）専用スタイル */
+/* ======================================= */
+
+/* 1. 全体設定 */
+body {
+    font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Arial, sans-serif;
+    line-height: 1.8; /* 読みやすさを確保 */
+    background-color: #f8f8f8;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #388e3c; /* 濃いグリーンで信頼感を演出 */
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.8em;
+    border-bottom: 2px solid #a5d6a7;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* 2. メインコンテンツエリア */
+main {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+/* 3. 記事一覧（目次）のスタイル */
+nav {
+    padding: 20px;
+    background-color: gray; /* 薄いグリーンの背景 */
+    border-radius: 8px;
+    margin-bottom: 40px;
+}
+
+nav h2 {
+    color: black;
+    border-bottom: 2px solid #c8e6c9;
+    padding-bottom: 5px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav li {
+    margin-bottom: 10px;
+    border-left: 3px solid black;
+    padding-left: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* 4. 個別記事のスタイル */
+section {
+    padding: 30px 0;
+    border-bottom: 1px dashed #ddd; /* 区切り線を点線に */
+}
+
+section:last-child {
+    border-bottom: none;
+}
+
+section h2 {
+    color: black; /* 記事タイトルは濃いシアン系で */
+    font-size: 2em;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.date {
+    color: #777;
+    font-size: 0.9em;
+    margin-bottom: 20px;
+    display: block;
+}
+
+/* 5. 記事本文のスタイル */
+section p {
+    margin-bottom: 1.5em;
+    text-align: justify; /* 左右均等割り付け */
+}
+
+/* 6. サイトマップ/フッター（導線）のスタイル */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+    color: #777;
+    border-top: 1px solid #ddd;
+    background-color: white;
+}
+
+footer a {
+    color: #388e3c;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+</style>
+</head>
+<body>
+    <body>
+    <h1>管理人日記</h1>
+    
+    <nav>
+        <ul>
+            <li>[2025/11/05] <a href="#article1">匿名掲示板の運営者が考える誹謗中傷対策</a></li>
+            <li>[2025/10/28] <a href="#article2">プログラミング初心者が挫折しないための学習法</a></li>
+            </ul>
+    </nav>
+    
+    <main>
+        <section id="article1">
+            <h2>匿名掲示板の運営者が考える誹謗中傷対策</h2>
+            <p class="date">2025/11/05</p>
+            <p>（ここに1,000文字以上の記事本文を記述）...</p>
+        </section>
+
+        <section id="article2">
+            <h2>プログラミング初心者が挫折しないための学習法</h2>
+            <p class="date">2025/10/28</p>
+            <p>（ここに1,000文字以上の記事本文を記述）...</p>
+        </section>
+        
+        </main>
+</body>
+    
+</body>
+</html>
