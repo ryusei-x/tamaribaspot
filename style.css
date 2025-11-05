@@ -13,7 +13,7 @@ main nav ul{
     justify-content: space-around;
     list-style-type: none;
 }
-aside {
+footer {
   background-color: gray;
   color: white;
   padding: 15px;
@@ -24,14 +24,15 @@ aside {
   justify-content: center;/* 中央寄せ（任意） */
 }
 
-aside a {
+footer a {
   color: #fff;            /* リンクを白文字に */
   text-decoration: none;  /* 下線を消す（任意） */
 }
 
-aside a:hover {
+footer a:hover {
   text-decoration: underline; /* ホバーで下線 */
 }
+
 
 
 
