@@ -396,8 +396,28 @@ button#postButton:hover {
         justify-content: center;
     }
 }
+footer {
+  background-color: gray;
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+
+  display: flex;          /* ← 横並びにするのはここ！ */
+  gap: 15px;              /* 要素の間のすき間 */
+  justify-content: center;/* 中央寄せ（任意） */
+}
+
+footer a {
+  color: #fff;            /* リンクを白文字に */
+  text-decoration: none;  /* 下線を消す（任意） */
+}
+
+footer a:hover {
+  text-decoration: underline; /* ホバーで下線 */
+}
 
     
+
 
 
 
