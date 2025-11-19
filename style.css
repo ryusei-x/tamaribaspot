@@ -35,7 +35,7 @@ header h1 {
     padding: 15px 20px;
     border-radius: 10px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    border-left: 5px solid var(--accent-color);
+    border-left: 4px solid blue; 
 }
 
 .choose {
@@ -107,6 +107,7 @@ footer a {
 footer a:hover {
     text-decoration: underline;
 }
+
 
 
 
