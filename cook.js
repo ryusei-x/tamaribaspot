@@ -37,7 +37,7 @@ let currentPostId = null; // 現在返信しようとしている投稿IDを保�
 postButton.addEventListener('click', async () => {
     
     // ニックネームが空欄の場合「匿名ファン」をデフォルトにする
-    const author = authorInput.value.trim() || '匿名ファン'; 
+    const author = authorInput.value.trim() || '名無しさん'; 
     const content = contentInput.value.trim();
 
     if (!content) {
@@ -258,7 +258,7 @@ onSnapshot(postsQuery, (snapshot) => {
         const isLiked = likedByArray.includes(authorForLikeCheck);
         const likeButtonClass = isLiked ? 'liked' : '';
         // ★修正: ハートマークはCSSで処理するため、テキストはシンプルにします。
-        const likeButtonText = isLiked ? '解除' : 'いいね！';
+        const likeButtonText = isLiked ? '解除' : '';
 
         // onclickに渡す文字列に含まれる可能性のあるシングルクォートをエスケープ処理
         // ここに渡すのは入力欄の値なので currentAuthor を使用
@@ -319,6 +319,7 @@ window.onload = function() {
         });
     }
 };
+
 
 
 
