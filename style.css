@@ -1,38 +1,111 @@
-header{
+/* 全体の基本デザイン */
+body {
+    font-family: "Segoe UI", "Hiragino Sans", "Noto Sans JP", sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #fafafa;
+    color: #333;
+    line-height: 1.7;
+}
+
+/* ヘッダー */
+header {
     text-align: center;
+    padding: 25px 10px;
+    background: #ffffff;
+    border-bottom: solid 1px #ddd;
 }
-header img{
-    width:10%;
-    position:relative;
-     top: -100px;
-      right:20%;
-    
-}
-main nav ul{
 
-    justify-content: space-around;
-    list-style-type: none;
+header h1 {
+    font-size: 1.8rem;
+    margin: 0;
 }
+
+.subtitle {
+    color: #777;
+    font-size: 0.95rem;
+    margin-top: 5px;
+}
+
+/* 紹介文 */
+.intro {
+    max-width: 800px;
+    margin: 20px auto;
+    background: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.choose {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    color: #555;
+}
+
+/* カテゴリ・リスト */
+.category-list {
+    max-width: 900px;
+    margin: 25px auto;
+    padding: 0 15px;
+}
+
+.category-list h2 {
+    margin-top: 30px;
+    color: #333;
+    border-left: 4px solid gray;
+    padding-left: 10px;
+}
+
+/* UL */
+.category-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 10px;
+}
+
+/* カード風リンク */
+.category-list li a {
+    display: block;
+    background: #ffffff;
+    padding: 12px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #333;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    transition: 0.15s;
+}
+
+.category-list li a:hover {
+    background: #fffae6;
+    transform: translateY(-3px);
+}
+
+/* フッター */
 footer {
-  background-color: gray;
-  color: white;
-  padding: 15px;
-  border-radius: 8px;
-
-  display: flex;          /* ← 横並びにするのはここ！ */
-  gap: 15px;              /* 要素の間のすき間 */
-  justify-content: center;/* 中央寄せ（任意） */
+    margin-top: 40px;
+    background-color: gray;
+    color: white;
+    padding: 15px;
+    border-radius: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
 }
 
 footer a {
-  color: #fff;            /* リンクを白文字に */
-  text-decoration: none;  /* 下線を消す（任意） */
+    color: #fff;
+    text-decoration: none;
 }
 
 footer a:hover {
-  text-decoration: underline; /* ホバーで下線 */
+    text-decoration: underline;
 }
-
 
 
 
