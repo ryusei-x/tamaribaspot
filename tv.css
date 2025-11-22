@@ -6,6 +6,8 @@ body {
     background-color: #eef1f6; /* 背景を明るいグレーに変更 */
     color: #333;
 }
+h1{
+    text-align: center
 
 header {
     /* ★修正点1: 画像を重ねるための設定と、高さを指定し直しました★ */
@@ -48,7 +50,7 @@ header {
     text-shadow: 0 0 8px rgba(0, 0, 0, 1); /* 文字の視認性を高める */
 }
 
-header h1 {
+header h2 {
     margin: 0;
     font-size: 2.5em; /* フォントを大きく */
     padding-bottom: 10px;
@@ -417,6 +419,7 @@ footer a:hover {
 }
 
     
+
 
 
 
